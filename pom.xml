@@ -10,7 +10,7 @@
 	<properties>
 		<author>Saren</author>
 		<mainClass>Main</mainClass>
-		<mainCommand>wfun</mainCommand>
+		<mainCommand>wtemp</mainCommand>
 	</properties>
 
 	<repositories>

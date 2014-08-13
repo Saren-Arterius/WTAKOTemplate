@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 
 public class ArgReload {
 
-    public ArgReload(CommandSender sender) {
+    public ArgReload(CommandSender sender, String[] args) {
         if (!sender.hasPermission(Main.getInstance().getProperty("artifactId") + ".reload")) {
             sender.sendMessage(Lang.NO_PERMISSION_COMMAND.toString());
             return;
