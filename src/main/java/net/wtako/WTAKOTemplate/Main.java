@@ -16,6 +16,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public final class Main extends JavaPlugin {
 
     private static Main             instance;
+    public static String            artifactId;
     public static YamlConfiguration LANG;
     public static File              LANG_FILE;
     public static Logger            log = Logger.getLogger("WTAKOTemplate");
@@ -23,6 +24,7 @@ public final class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         Main.instance = this;
+        Main.artifactId = getProperty("artifactId");
         getCommand(getProperty("mainCommand")).setExecutor(new CommandTemp());
         Config.saveAll();
         loadLang();
