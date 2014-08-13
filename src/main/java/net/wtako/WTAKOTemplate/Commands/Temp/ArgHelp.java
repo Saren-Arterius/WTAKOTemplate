@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 import net.wtako.WTAKOTemplate.Main;
+import net.wtako.WTAKOTemplate.Utils.Commands;
 import net.wtako.WTAKOTemplate.Utils.Lang;
-import net.wtako.WTAKOTemplate.Utils.PluginCommand;
 
 import org.bukkit.command.CommandSender;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -22,7 +22,7 @@ public class ArgHelp {
                 messages.add(Main.getInstance().getName() + " v" + Main.getInstance().getProperty("version"));
                 messages.add("Author: " + Main.getInstance().getProperty("author"));
                 final HashMap<String, ArrayList<String>> commandHelps = new HashMap<String, ArrayList<String>>();
-                for (final PluginCommand command: PluginCommand.values()) {
+                for (final Commands command: Commands.values()) {
                     if (command.name().equalsIgnoreCase("MAIN_COMMAND")) {
                         continue;
                     }

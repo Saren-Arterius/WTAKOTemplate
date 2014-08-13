@@ -2,7 +2,7 @@ package net.wtako.WTAKOTemplate.Commands;
 
 import java.lang.reflect.InvocationTargetException;
 
-import net.wtako.WTAKOTemplate.Utils.PluginCommand;
+import net.wtako.WTAKOTemplate.Utils.Commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -20,7 +20,7 @@ public class CommandTemp implements CommandExecutor {
 
     public boolean callCommand(CommandSender sender, String[] args, String targetCommandName) {
         try {
-            final PluginCommand targetCommand = PluginCommand.valueOf(targetCommandName.toUpperCase());
+            final Commands targetCommand = Commands.valueOf(targetCommandName.toUpperCase());
             if (targetCommand == null) {
                 return false;
             }
