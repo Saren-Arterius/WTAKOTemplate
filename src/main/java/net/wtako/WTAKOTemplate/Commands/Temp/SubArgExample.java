@@ -1,12 +1,14 @@
 package net.wtako.WTAKOTemplate.Commands.Temp;
 
 import java.lang.reflect.InvocationTargetException;
-import org.bukkit.command.CommandSender;
+
 import net.wtako.WTAKOTemplate.Main;
 import net.wtako.WTAKOTemplate.Commands.Temp.Example.ArgHi;
 import net.wtako.WTAKOTemplate.Utils.BaseCommands;
 import net.wtako.WTAKOTemplate.Utils.Commands;
 import net.wtako.WTAKOTemplate.Utils.Lang;
+
+import org.bukkit.command.CommandSender;
 
 public class SubArgExample {
 
@@ -24,10 +26,12 @@ public class SubArgExample {
             this.permission = permission;
         }
 
+        @Override
         public String getHelpMessage() {
             return helpMessage;
         }
 
+        @Override
         public Class<?> getTargetClass() {
             return targetClass;
         }

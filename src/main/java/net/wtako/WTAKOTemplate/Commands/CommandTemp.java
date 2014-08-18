@@ -21,7 +21,7 @@ public class CommandTemp implements CommandExecutor {
 
     public boolean callCommand(CommandSender sender, String[] args, String targetCommandName) {
         try {
-            Commands targetCommand = Commands.valueOf(targetCommandName.toUpperCase());
+            final Commands targetCommand = Commands.valueOf(targetCommandName.toUpperCase());
             if (!sender.hasPermission(targetCommand.getRequiredPermission())) {
                 sender.sendMessage(Lang.NO_PERMISSION_COMMAND.toString());
                 return true;

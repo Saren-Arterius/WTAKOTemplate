@@ -38,7 +38,7 @@ public enum Lang {
      *            The default string.
      */
     Lang(String start) {
-        this.path = name().toLowerCase().replace("_", "-");
+        path = name().toLowerCase().replace("_", "-");
         def = start;
     }
 

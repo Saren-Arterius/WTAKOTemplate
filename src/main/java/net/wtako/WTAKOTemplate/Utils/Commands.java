@@ -5,13 +5,13 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
-import org.bukkit.command.CommandSender;
-import org.bukkit.scheduler.BukkitRunnable;
-
 import net.wtako.WTAKOTemplate.Main;
 import net.wtako.WTAKOTemplate.Commands.Temp.ArgHelp;
 import net.wtako.WTAKOTemplate.Commands.Temp.ArgReload;
 import net.wtako.WTAKOTemplate.Commands.Temp.SubArgExample;
+
+import org.bukkit.command.CommandSender;
+import org.bukkit.scheduler.BukkitRunnable;
 
 public enum Commands implements BaseCommands {
 
@@ -31,10 +31,12 @@ public enum Commands implements BaseCommands {
         this.permission = permission;
     }
 
+    @Override
     public String getHelpMessage() {
         return helpMessage;
     }
 
+    @Override
     public Class<?> getTargetClass() {
         return targetClass;
     }
