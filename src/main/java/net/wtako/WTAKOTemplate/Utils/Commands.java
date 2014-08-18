@@ -45,6 +45,17 @@ public enum Commands implements BaseCommands {
         return permission;
     }
 
+    public static String joinArgsInUse(String[] args, int level) {
+        String argsMessage = "";
+        for (int i = 0; i < level; i++) {
+            argsMessage += MessageFormat.format(Lang.COMMAND_ARG_IN_USE.toString(), args[i]);
+            if (i < level - 1) {
+                argsMessage += " ";
+            }
+        }
+        return argsMessage;
+    }
+
     public static void sendHelp(final CommandSender sender, final BaseCommands[] commandValues, final String commandName) {
         new BukkitRunnable() {
             @Override
