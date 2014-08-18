@@ -12,15 +12,13 @@ import org.bukkit.configuration.file.YamlConfiguration;
  */
 public enum Lang {
 
-    TITLE("title", "[" + Main.getInstance().getName() + "]"),
-    COMMAND_HELP_SEPERATOR("command-help-seperator", "&6 | &a"),
-    HELP_HELP("help-help", "Type &b/" + Main.getInstance().getProperty("mainCommand")
-            + " &a{0}&f to show help (this message). {1}"),
-    HELP_RELOAD("help-reload", "Type &b/" + Main.getInstance().getProperty("mainCommand")
-            + " &a{0}&f to reload the plugin. {1}"),
-    NO_PERMISSION_HELP("no-permission-help", "(&cno permission&f)"),
-    PLUGIN_RELOADED("plugin-reloaded", "&aPlugin reloaded."),
-    NO_PERMISSION_COMMAND("no-permission-command", "&cYou are not allowed to use this command.");
+    TITLE("[" + Main.getInstance().getName() + "]"),
+    COMMAND_HELP_SEPERATOR("&6 | &a"),
+    HELP_HELP("Type &b/" + Main.getInstance().getProperty("mainCommand") + " &a{0}&f to show help (this message). {1}"),
+    HELP_RELOAD("Type &b/" + Main.getInstance().getProperty("mainCommand") + " &a{0}&f to reload the plugin. {1}"),
+    NO_PERMISSION_HELP("(&cno permission&f)"),
+    PLUGIN_RELOADED("&aPlugin reloaded."),
+    NO_PERMISSION_COMMAND("&cYou are not allowed to use this command.");
 
     private String                   path;
     private String                   def;
@@ -34,8 +32,8 @@ public enum Lang {
      * @param start
      *            The default string.
      */
-    Lang(String path, String start) {
-        this.path = path;
+    Lang(String start) {
+        this.path = name().toLowerCase().replace("_", "-");
         def = start;
     }
 
