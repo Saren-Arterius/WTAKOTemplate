@@ -81,7 +81,7 @@ public enum Commands implements BaseCommands {
                     }
                     if (!hasHelpMessage) {
                         final ArrayList<String> commandList = new ArrayList<String>();
-                        commandList.add(command.name().toLowerCase());
+                        commandList.add(command.name().toLowerCase().replace("_", "-"));
                         commandHelps.put(command.getHelpMessage(), commandList);
                     }
                 }
