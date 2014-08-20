@@ -45,7 +45,7 @@ public enum Config {
     }
 
     public long getLong() {
-        return (long) value;
+        return Integer.valueOf(getInt()).longValue();
     }
 
     public double getDouble() {
