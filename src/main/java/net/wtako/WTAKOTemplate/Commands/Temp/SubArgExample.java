@@ -49,7 +49,7 @@ public class SubArgExample {
 
     public boolean callCommand(CommandSender sender, String[] args, String targetCommandName) {
         try {
-            final SubCommands targetCommand = SubCommands.valueOf(targetCommandName.toUpperCase());
+            final SubCommands targetCommand = SubCommands.valueOf(targetCommandName.toUpperCase().replace("-", "_"));
             if (targetCommand == SubCommands.MAIN_COMMAND) {
                 return false;
             }
