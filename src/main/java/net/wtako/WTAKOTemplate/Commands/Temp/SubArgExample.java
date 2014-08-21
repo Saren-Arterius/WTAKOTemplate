@@ -36,6 +36,7 @@ public class SubArgExample {
             return targetClass;
         }
 
+        @Override
         public String getRequiredPermission() {
             return permission;
         }
@@ -55,6 +56,7 @@ public class SubArgExample {
             }
             if (!sender.hasPermission(targetCommand.getRequiredPermission())) {
                 sender.sendMessage(Lang.NO_PERMISSION_COMMAND.toString());
+                return true;
             }
             targetCommand.getTargetClass().getDeclaredConstructor(CommandSender.class, String[].class)
                     .newInstance(sender, args);

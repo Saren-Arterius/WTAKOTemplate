@@ -41,6 +41,7 @@ public enum Commands implements BaseCommands {
         return targetClass;
     }
 
+    @Override
     public String getRequiredPermission() {
         return permission;
     }
@@ -96,7 +97,7 @@ public enum Commands implements BaseCommands {
                         }
                     }
                     String permissionString = "";
-                    for (final Commands command: Commands.values()) {
+                    for (final BaseCommands command: commandValues) {
                         if (command.getHelpMessage().equalsIgnoreCase(entry.getKey())
                                 && !sender.hasPermission(command.getRequiredPermission())) {
                             permissionString = Lang.NO_PERMISSION_HELP.toString();
