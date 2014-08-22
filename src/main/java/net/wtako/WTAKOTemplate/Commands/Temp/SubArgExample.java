@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import net.wtako.WTAKOTemplate.Main;
 import net.wtako.WTAKOTemplate.Commands.Temp.Example.ArgHi;
 import net.wtako.WTAKOTemplate.Utils.BaseCommands;
-import net.wtako.WTAKOTemplate.Utils.CommandsTemp;
+import net.wtako.WTAKOTemplate.Utils.CommandHelper;
 import net.wtako.WTAKOTemplate.Utils.Lang;
 
 import org.bukkit.command.CommandSender;
@@ -44,7 +44,7 @@ public class SubArgExample {
 
     public SubArgExample(final CommandSender sender, String[] args) {
         if (args.length < 2 || !callCommand(sender, args, args[1])) {
-            CommandsTemp.sendHelp(sender, SubCommands.values(), args[0]);
+            CommandHelper.sendHelp(sender, SubCommands.values(), args[0]);
         }
     }
 
