@@ -2,7 +2,7 @@ package net.wtako.WTAKOTemplate.Commands;
 
 import java.lang.reflect.InvocationTargetException;
 
-import net.wtako.WTAKOTemplate.Utils.Commands;
+import net.wtako.WTAKOTemplate.Utils.CommandsTemp;
 import net.wtako.WTAKOTemplate.Utils.Lang;
 
 import org.bukkit.command.Command;
@@ -21,7 +21,7 @@ public class CommandTemp implements CommandExecutor {
 
     public boolean callCommand(CommandSender sender, String[] args, String targetCommandName) {
         try {
-            final Commands targetCommand = Commands.valueOf(targetCommandName.toUpperCase().replace("-", "_"));
+            final CommandsTemp targetCommand = CommandsTemp.valueOf(targetCommandName.toUpperCase().replace("-", "_"));
             if (!sender.hasPermission(targetCommand.getRequiredPermission())) {
                 sender.sendMessage(Lang.NO_PERMISSION_COMMAND.toString());
                 return true;
