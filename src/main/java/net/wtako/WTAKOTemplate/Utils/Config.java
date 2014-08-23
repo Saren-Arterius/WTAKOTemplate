@@ -41,6 +41,9 @@ public enum Config {
     }
 
     public int getInt() {
+        if (value instanceof Double) {
+            return ((Double) value).intValue();
+        }
         return (int) value;
     }
 
@@ -49,6 +52,9 @@ public enum Config {
     }
 
     public double getDouble() {
+        if (value instanceof Integer) {
+            return ((Integer) value).doubleValue();
+        }
         return (double) value;
     }
 
