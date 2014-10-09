@@ -28,6 +28,10 @@ public enum Config {
         }
     }
 
+    public void setValue(Object value) {
+        this.value = value;
+    }
+
     public Object getValue() {
         return value;
     }
@@ -77,6 +81,8 @@ public enum Config {
         for (final Config setting: Config.values()) {
             if (!config.contains(setting.getPath())) {
                 config.set(setting.getPath(), setting.getValue());
+            } else {
+                setting.setValue(config.get(setting.getPath()));
             }
         }
         Main.getInstance().saveConfig();
